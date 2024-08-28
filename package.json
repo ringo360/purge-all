@@ -1,0 +1,22 @@
+{
+	"name": "purge-all",
+	"version": "1.0.0",
+	"main": "src/index.ts",
+	"scripts": {
+		"start": "tsx src/index.ts"
+	},
+	"repository": "https://github.com/ringo360/purge-all.git",
+	"author": "ringoXD <ringoxd@ringoxd.dev>",
+	"license": "MIT",
+	"dependencies": {
+		"@types/node": "^22.5.1",
+		"consola": "^3.2.3",
+		"discord.js-selfbot-v13": "^3.3.0",
+		"picocolors": "^1.0.1",
+		"tsx": "^4.19.0"
+	},
+	"devDependencies": {},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}
