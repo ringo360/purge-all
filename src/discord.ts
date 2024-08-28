@@ -12,6 +12,7 @@ export async function discordClient(token: string, channelid: string): Promise<v
 				consola.info('[Discord] Target Channel ID:', channel.name);
 				let lastId = null;
 				while (1) {
+					consola.info('[Devlog] Fetching... lastid: ', lastId);
 					//@ts-ignore
 					let msgs = await channel.messages.fetch({
 						limit: 100,
@@ -20,7 +21,9 @@ export async function discordClient(token: string, channelid: string): Promise<v
 						}),
 					});
 					let empty = true;
+					//@ts-ignore
 					for (let msg of msgs.toJSON()) {
+						lastId = msg.id;
 						if (!msg.content) continue;
 						//@ts-ignore
 						if (msg.author.id != client.user.id) continue;
@@ -34,7 +37,7 @@ export async function discordClient(token: string, channelid: string): Promise<v
 							consola.fail(c.bold(`[FAIL] ${msgid} - ${e}`));
 						}
 					}
-					if (empty) break;
+					// if (empty) break;
 				}
 
 				consola.info('[Discord] Destroying...');
