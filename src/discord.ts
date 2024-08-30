@@ -78,6 +78,7 @@ export async function discordClient(token: string, channelid: string): Promise<v
 									consola.warn(`[Discord] Ratelimit detected(${count}). pause for 10 seconds...`);
 									await delay(10000);
 									consola.info('[Discord] Resume...');
+									limited = false;
 								}
 							}
 							count++;
