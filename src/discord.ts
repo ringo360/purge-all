@@ -8,7 +8,7 @@ let max_limit: number = 0;
 let limited: boolean = false;
 async function persec() {
 	setInterval(async () => {
-		consola.log(`[Devlog] ${count}/s`);
+		consola.log(`[Devlog] ${count}/s | LimitC: ${max_limit}`);
 		if (!limited) {
 			if (max_limit >= 5) {
 				consola.warn('[Devlog] Ratelimited.');
