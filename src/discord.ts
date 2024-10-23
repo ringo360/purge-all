@@ -75,8 +75,8 @@ export async function discordClient(token: string, channelid: string): Promise<v
 							consola.success(`[DELETED] ${msg.id}`);
 							if (count < 5) {
 								if (limited) {
-									consola.warn(`[Discord] Ratelimit detected(${count}). pause for 10 seconds...`);
-									await delay(10000);
+									consola.warn(`[Discord] Ratelimit detected(${count}). pause for 15 seconds...`);
+									await delay(15000);
 									consola.info('[Discord] Resume...');
 									limited = false;
 								}
